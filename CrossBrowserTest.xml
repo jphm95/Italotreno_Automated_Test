@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test thread-count="5" name="TestFirefox">
+        <parameter name="browser" value="Firefox"></parameter>
+        <classes>
+            <class name="Tests.CrossBrowserTestSearchTicket"/>
+        </classes>
+    </test> <!-- Test -->
+    <test thread-count="5" name="TestChrome">
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="Tests.CrossBrowserTestSearchTicket"/>
+        </classes>
+    </test> <!-- Test -->
+    <test thread-count="5" name="TestSafari">
+        <parameter name="browser" value="Safari"></parameter>
+        <classes>
+            <class name="Tests.CrossBrowserTestSearchTicket"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
