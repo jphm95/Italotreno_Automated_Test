@@ -17,7 +17,7 @@ public class DepartureOptionsPage {
     @FindBy(css="div.oGMzg1KnBMdFpRbUerJ8:nth-child(1) > header:nth-child(1) > div:nth-child(1) > div:nth-child(5)")
     WebElement tripDetails;
 
-    @FindBy(css=".bNSZMvCfDFZUHStNlsEV > div:nth-child(1) > main:nth-child(1) > section:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)")
+    @FindBy(css=".bNSZMvCfDFZUHStNlsEV > div:nth-child(1) > main:nth-child(1) > section:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > strong:nth-child(1)")
     WebElement tripPrice;
 
     @FindBy(css=".bNSZMvCfDFZUHStNlsEV > div:nth-child(1) > main:nth-child(1) > footer:nth-child(3) > div:nth-child(1) > button:nth-child(2)")

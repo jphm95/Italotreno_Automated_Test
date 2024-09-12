@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static org.openqa.selenium.support.PageFactory.initElements;
 
 
 public class HomePage {
@@ -19,6 +19,13 @@ public class HomePage {
      WebDriverWait wait;
 
     //Locators:
+
+    //Login:
+    @FindBy(id ="login__button__customerB2C" )
+    WebElement loginButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Iscriviti gratis!']")
+    WebElement registerLink;
 
     //Departure and Return Fields:
     @FindBy(xpath = "(//input[@placeholder='Inserisci città o stazione'])[1]")
@@ -114,7 +121,8 @@ public class HomePage {
         addPassengersButton.click();
     }
 
-    public void addGiovannePassenger () {
+    public void addTwoGiovannePassenger () {
+        incrementGiovanneCounterButton.click();
         incrementGiovanneCounterButton.click();
     }
 
@@ -124,6 +132,15 @@ public class HomePage {
 
     public void searchTrains () {
         searchButton.click();
+    }
+
+    public void clickLogin () {
+        loginButton.click();
+    }
+
+    public void clickSingUpText () {
+        registerLink.click();
+
     }
 
     // Steps:
@@ -144,8 +161,14 @@ public class HomePage {
 
     public void setPassengers () {
         addPassengers();
-        addGiovannePassenger();
+        addTwoGiovannePassenger();
         confirmPassengers();
+    }
+
+    public void registerUser () {
+        wait.until(ExpectedConditions.visibilityOf(loginButton));
+        clickLogin();
+        clickSingUpText();
     }
 
 

@@ -1,10 +1,9 @@
 package Tests;
 
-import Pages.DepartureOptionsPage;
-import Pages.HomePage;
-import Pages.PassengerDataPage;
-import Pages.ReturnOptionsPage;
+import Pages.*;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -23,20 +22,20 @@ public class TestBookTrains {
 
     @BeforeSuite
     public void openBrowser() {
-        String firefoxProfilePath = "/Users/juanpablohernandezmonter/Library/Application Support/Firefox/Profiles/8bg3ihot.sa1";
-        FirefoxProfile automationProfile1 = new FirefoxProfile(new File(firefoxProfilePath));
+        String firefoxProfilePath = "/Users/juanpablohernandezmonter/Library/Application Support/Firefox/Profiles/kt4q1vdt.sa3";
+        FirefoxProfile automationProfile2 = new FirefoxProfile(new File(firefoxProfilePath));
         FirefoxOptions options = new FirefoxOptions();
-        options.setProfile(automationProfile1);
+        options.setProfile(automationProfile2);
         options.addPreference("general.useragent.override", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:129.0) Gecko/20100101 Firefox/129.0");
 
         driver = new FirefoxDriver(options);
-        //driver.manage().deleteAllCookies();
+        driver.manage().deleteAllCookies();
         driver.get(url);
         driver.manage().window().maximize();
 
     }
 
-    @Test
+    @Test(priority = 1)
     public void searchTrains() {
 
         HomePage home;
@@ -48,7 +47,7 @@ public class TestBookTrains {
         home.searchTrains();
     }
 
-    @Test
+    @Test(priority = 2)
     public void selectDepartureTrain () {
 
         DepartureOptionsPage departureOptions;
@@ -59,12 +58,12 @@ public class TestBookTrains {
         departureOptions.goToReturnOptionsPage();
 
 
-        /*
-        departureOptions = new DepartureOptionsPage(driver);
+
+        /*departureOptions = new DepartureOptionsPage(driver);
         departureOptions.selectDepartureTrip();*/
     }
 
-    @Test
+    @Test(priority = 3)
     public void selectReturnTrain () {
         ReturnOptionsPage returnOptions;
         returnOptions = new ReturnOptionsPage(driver);
@@ -75,24 +74,40 @@ public class TestBookTrains {
       //  returnOptions.selectReturnTrip();
     }
 
-    @Test
-    public void fillPassengersData (){
+    @Test(priority = 4)
+    public void fillPassengerOneData () {
         PassengerDataPage passengerData;
         passengerData = new PassengerDataPage(driver);
-        passengerData.writeName("Juan");
-        passengerData.writeLastName("Pablo");
-        passengerData.writeEmail("<EMAIL>");
-        passengerData.goToPaymentPage();
 
-      //  passengerData.fillPassengerTwoData("Juan Pablo", "HM" , "jp@gmail.com");
+        passengerData.fillPassengerOne("Juan", "Pablo",
+                                       "jp@mail.com","jp@mail.com",
+                                       "123456789");
     }
 
+    @Test(priority = 5)
+    public void fillPassengerTwoData () {
+        PassengerDataPage passengerData;
+        passengerData = new PassengerDataPage(driver);
 
+        passengerData.fillPassengerTwo("Juan Pablo", "HM" , "jp@gmail.com");
+    }
+
+    @Test(priority = 6)
+    public void payTickets () {
+        PaymentPage payment;
+        payment = new PaymentPage(driver);
+
+        payment.fillCardData("Juan", "1234123412341234", "01",
+                    "2025", "123");
+
+        payment.submitPayment();
+    }
+
+/*
     @AfterSuite
     public void tearDown () {
         driver.close();
     }
 
-
-
-}
+*/
+    }
