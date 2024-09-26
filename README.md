@@ -26,3 +26,29 @@ To run this project locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/jphm95/Italotreno_Automated_Test.git
+
+2. Navigate to the project directory:
+    ```bash
+   cd Italotreno_Automated_Test
+
+3. Open the project in your prefered IDE.
+   
+4. Ensure you have the necessary dependencies installed (Selenium, TestNG). You can use Maven to manage dependencies.
+
+5. Run the tests using TestNG.
+
+## Challenges and Solutions
+
+- **Bot Detection:**: The Italotreno website has mechanisms to detect automated scripts. This project includes custom code to mimic human behavior, helping to avoid detection.
+- **Dynamic Elements:**: Handling dynamically loaded elements was challenging. Explicit waits were implemented to ensure elements are fully loaded before interaction.
+
+## Future Work
+
+
+- ** **: Enhance the test suite with more edge cases and scenarios.
+- ** **: Integrate additional features like user login and payment processing.
+- ** **: Creation of Assertions
+- ** **: Data Provider using Excel Files
+- ** **: Screenshots 
+
+
