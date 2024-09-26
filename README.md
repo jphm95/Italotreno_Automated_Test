@@ -39,16 +39,16 @@ To run this project locally, follow these steps:
 
 ## Challenges and Solutions
 
-- **Bot Detection:**: The Italotreno website has mechanisms to detect automated scripts. This project includes custom code to mimic human behavior, helping to avoid detection.
-- **Dynamic Elements:**: Handling dynamically loaded elements was challenging. Explicit waits were implemented to ensure elements are fully loaded before interaction.
+- **Bot Detection:** The Italotreno website has mechanisms to detect automated scripts. This project includes custom code to mimic human behavior, helping to avoid detection.
+- **Dynamic Elements:** Handling dynamically loaded elements was challenging. Explicit waits were implemented to ensure elements are fully loaded before interaction.
 
 ## Future Work
 
 
-- ** **: Enhance the test suite with more edge cases and scenarios.
-- ** **: Integrate additional features like user login and payment processing.
-- ** **: Creation of Assertions
-- ** **: Data Provider using Excel Files
-- ** **: Screenshots 
+-  Enhance the test suite with more edge cases and scenarios.
+-  Integrate additional features like user login and payment processing.
+-  Creation of Assertions
+-  Data Provider using Excel Files
+-  Screenshots 
 
 
